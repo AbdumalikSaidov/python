@@ -1,4 +1,7 @@
 n=int(input())
 list=[]
+a=[]
 list = [i for i in iter(input, '')]
-print(list)
+for i in range(len(list)):
+    a.append(list[i].split(' '))
+print(a)
