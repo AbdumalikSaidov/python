@@ -1,0 +1,4 @@
+n=int(input())
+list=[]
+list = [i for i in iter(input, '')]
+print(list)
