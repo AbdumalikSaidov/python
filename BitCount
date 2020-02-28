@@ -1,37 +1,35 @@
 count=int(input())
-ikki=0
-if count>=0:
-    s=bin(count)
-    ikki=int(s[2:])
-else:
-    s=bin(count)
-    ikki=int(s[3:])
-s=bin(count)
+a=input().split(' ')
+ikki=''
 
-print(ikki)
+def x_bit(x):
+    while len(x)<32:
+        x='0'+x
+    return x
 
-# while len(ikki)<32:
-#     ikki='0'+ikki
-# print(ikki)
+def manfiy_ikki(manf):
+    res=''
+    inres=0
+    for i in range(len(manf)):
+        if manf[i]=='1':
+            res=res+'0'
+        else: res=res+'1'
+    inres=int(res)+1
+    return inres
 
-# def manfiy_ikki(manf):
-#     res=''
-#     inres=0
-#     for i in range(len(manf)):
-#         if manf[i]=='1':
-#             res=res+'0'
-#         else: res=res+'1'
-#     inres=int(res)+1
-#     return inres
-#
-# print(manfiy_ikki(ikki))
+def bir_sana(bir):
+    a=0
+    for i in bir:
+        if i=='1':
+            a+=1
+    return a
 
-
-#print(int('1010',2))
-# res=''
-# while s>=0:
-#     res=str(s%2)+res
-#     print(res)
-#     s=s//2
-#     if s==0: break
-# print(res)
+for i in range(count):
+    if int(a[i])>=0:
+        s=bin(int(a[i]))
+        ikki= x_bit(s[2:])
+        #print(ikki)
+    else:
+        s=bin(int(a[i]))
+        ikki=manfiy_ikki(x_bit(s[3:]))
+    print(bir_sana(ikki),end=' ')
