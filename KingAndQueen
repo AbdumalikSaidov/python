@@ -1,0 +1,14 @@
+vertical=['1','2','3','4','5','6','7','8']
+horizontal=['a','b','c','d','e','f','g','h']
+
+def v_h_yur(king,queen):
+    if queen[0]==king[0] or queen[1]==king[1]:
+        return 'Y'
+
+def d_yur(queen):
+    v=vertical.index(queen[1])
+    h=horizontal.index(queen[0])
+    s='v index={}, h index={}'.format(v,h)
+    return s
+
+print(d_yur('b1'))
