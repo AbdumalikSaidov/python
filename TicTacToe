@@ -1,0 +1,39 @@
+n = int(input())
+def is_true(stol):
+    if stol[0][1]==stol[1][1]==stol[2][1]:
+        return True
+    elif stol[3][1]==stol[4][1]==stol[5][1]:
+        return True
+    elif stol[6][1]==stol[7][1]==stol[8][1]:
+        return True
+    elif stol[0][1]==stol[3][1]==stol[6][1]:
+        return True
+    elif stol[1][1]==stol[4][1]==stol[7][1]:
+        return True
+    elif stol[2][1]==stol[5][1]==stol[8][1]:
+        return True
+    elif stol[0][1]==stol[4][1]==stol[8][1]:
+        return True
+    elif stol[2][1]==stol[4][1]==stol[6][1]:
+        return True
+    else: return False
+a=[]
+#7 5 4 1 9 2 8 3 6
+for i in range(n):
+   stol=[[1,''],[2,''],[3,''],[4,''],[5,''],[6,''],[7,''],[8,''],[9,'']]
+   a=list(map(int, input().split(' ')))
+   count=0
+   for j in range((len(a))):
+       #while not is_true(stol):
+       if ((0+j)%2==0):
+           x=a[j]
+           stol[x-1][1]='x'
+       elif ((0+j)%2==1):
+           o=a[j]
+           stol[o-1][1]='o'
+       count+=1
+       if count>=5:
+           if is_true(stol): break
+       if count==9:
+            count=0
+   print(count,end=' ')
