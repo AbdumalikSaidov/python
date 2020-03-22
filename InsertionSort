@@ -1,0 +1,20 @@
+count=int(input())
+a=list(map(int, input().split(' ')))
+n=a[0]
+a.pop(0)
+a.sort()
+a.insert(0,n)
+b=[]
+pas=0
+while (True):
+    c=0
+    for i in range(len(a)-1):
+        pas=0
+        if int(a[i])>int(a[i+1]):
+            (a[i]),(a[i+1])=a[i+1],a[i]
+            c+=1
+            pas+=1
+            b.append(str(pas))
+    if c==0: break
+b.append('0')
+print(' '.join(b))
